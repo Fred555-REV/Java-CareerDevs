@@ -159,8 +159,7 @@ const employeeSalaries = [
 var salary = [];
 var ID = [];
 var largestSalaries = [];
-console.log(employeeSalaries[0][0])
-for (let i = 0; employeeSalaries.length; i++) {
+for (let i = 0; i < employeeSalaries.length; i++) {
     if (ID.indexOf(employeeSalaries[i][0]) == -1 && employeeSalaries[i][1] > 60000) {
         ID.push(employeeSalaries[i][0]);
     }
@@ -174,10 +173,9 @@ for (let i = 0; i < ID.length; i++) {
         if (employeeSalaries[j][0] == ID[i] && employeeSalaries[j][1] > largestSalary) {
             largestSalary = employeeSalaries[j][1];
         }
-        console.log(largestSalary)
-        largestSalaries.push(largestSalary);
-        salary.push([ID[i], largestSalaries[i]]);
     }
+    // console.log(largestSalary)
+    largestSalaries.push(largestSalary);
+    salary.push([ID[i], largestSalaries[i]]);
 }
-
-// console.log(salary);
+console.log(salary);
