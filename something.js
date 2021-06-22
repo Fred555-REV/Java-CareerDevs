@@ -163,13 +163,10 @@ for (let i = 0; employeeSalaries.length; i++) {
     if (ID.indexOf(employeeSalaries[i][0]) == -1 && employeeSalaries[i][1] > 60000) {
         ID.push(employeeSalaries[i][0]);
     }
-    
 
-    // largestSalaries.push(largestSalary);
-    // salary.push([ID, largestSalary]);
 }
 // console.log(ID)
-// console.log(salary);
+
 for (let i = 0; i < ID.length; i++) {
     let largestSalary = 0
     for (let j = 0; j < employeeSalaries.length; j++) {
@@ -177,5 +174,9 @@ for (let i = 0; i < ID.length; i++) {
         largestSalary = employeeSalaries[j][1];
     }
     console.log(largestSalary)
+    largestSalaries.push(largestSalary);
+    salary.push([ID[i], largestSalaries[i]]);
 }
-}
+}    
+    
+// console.log(salary);
