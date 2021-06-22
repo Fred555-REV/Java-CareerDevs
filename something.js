@@ -1,5 +1,5 @@
 // I think best way of doing this is making small pieces that work together
-let employeeSalaries = [
+const employeeSalaries = [
     [10001, 60117, "1986-06-26", "1987-06-26"],
     [10001, 62102, "1987-06-26", "1988-06-25"],
     [10001, 66074, "1988-06-25", "1989-06-25"],
@@ -156,23 +156,26 @@ let employeeSalaries = [
     [10014, 59142, "2000-12-27", "2001-12-27"],
     [10014, 60598, "2001-12-27", "9999-01-01"],
 ]
-let salary = [];
-let ID = [];
-let largestSalaries = [];
+var salary = [];
+var ID = [];
+var largestSalaries = [];
 for (let i = 0; employeeSalaries.length; i++) {
-    console.log(employeeSalaries[i][0])
     if (ID.indexOf(employeeSalaries[i][0]) == -1 && employeeSalaries[i][1] > 60000) {
         ID.push(employeeSalaries[i][0]);
     }
-    console.log(ID[i])
-    let largestSalary = 0;
-    for (let j = 0; j < ID.length; j++) {
-        if (employeeSalaries[i][0] == ID[i] && employeeSalaries[j][1] > largestSalary) {
-            largestSalary = employeeSalaries[j][1];
-        }
-    }
-    console.log(largestSalary);
-    largestSalaries.push(largestSalary);
-    salary.push([ID, largestSalary]);
+    
+
+    // largestSalaries.push(largestSalary);
+    // salary.push([ID, largestSalary]);
 }
-console.log(salary);
+// console.log(ID)
+// console.log(salary);
+for (let i = 0; i < ID.length; i++) {
+    let largestSalary = 0
+    for (let j = 0; j < employeeSalaries.length; j++) {
+    if (employeeSalaries[j][0] == ID[i] && employeeSalaries[j][1] > largestSalary) {
+        largestSalary = employeeSalaries[j][1];
+    }
+    console.log(largestSalary)
+}
+}
